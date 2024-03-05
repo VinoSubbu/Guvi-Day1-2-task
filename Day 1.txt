@@ -1,0 +1,44 @@
+1.Write a blog on Difference between HTTP1.1 vs HTTP2 
+ 
+Multiplexing : 
+   -> HTTP/1: In HTTP/1, each request/response connection is established and handled sequentially. This means that if a browser wants to fetch multiple resources from a server, it needs to open multiple connections, leading to increased latency. 
+   -> HTTP/2: HTTP/2 supports multiplexing, allowing multiple streams of data to be sent and received in parallel over a single connection. This significantly improves the efficiency of resource loading, reducing latency and improving overall performance. 
+
+Prioritization :  
+   -> HTTP/1: Requests are processed in the order they are received, and there is no explicit mechanism for prioritizing requests. This can lead to situations where high-priority resources are delayed by lower-priority ones. 
+   -> HTTP/2: HTTP/2 introduces stream prioritization, allowing the client to specify the priority of each resource. This enables more efficient resource allocation, ensuring that critical resources are fetched and rendered more quickly. 
+
+Header Compression : 
+   -> HTTP/1: Headers are not compressed, and they are sent in plain text with each request and response. This can result in significant overhead, especially when transmitting a large number of small resources. 
+   -> HTTP/2 uses header compression, reducing the size of headers and lowering the amount of data that needs to be transmitted. This helps in optimizing the use of network resources and improving page load times. 
+
+Server Push :  
+    -> HTTP/1: Resources are requested by the client, and the server responds with the requested resources. There is no mechanism for the server to initiate the sending of additional resources that the client may need. 
+    -> HTTP/2 supports server push, allowing the server to proactively push resources to the client that it anticipates the client will need. This can help in further reducing latency and improving the loading speed of web pages. 
+
+Binary Protocol : 
+    -> HTTP/1: It uses a text-based protocol, which is human-readable but can be less efficient for machines to process. This can result in higher overhead and slower performance. 
+    -> HTTP/2: HTTP/2 uses a binary protocol, which is more efficient for machines to parse and results in reduced overhead. This enhances the speed of communication between clients and servers. 
+
+ 
+
+2 . Write a blog about objects and its internal representation in Javascript 
+     
+   Answer :  
+    -> In JavaScript, an object is a collection of key-value pairs, where each key is a unique identifier (also called a property), and each value can be of any data type, including other objects, arrays, functions, and primitive values. Objects in JavaScript are dynamic, meaning properties can be added, updated, or removed at runtime. 
+
+    -> Internal Representation of Objects :  
+          1.Internally, JavaScript engines use various techniques to represent objects efficiently. One common approach is through the use of hash tables or dictionaries, where each property name (key) is hashed to a unique location in memory, allowing for fast lookup and access. 
+          2.When an object is created in JavaScript, memory is allocated to store its properties and methods. Each property is stored as a key-value pair, with the property name (key) being converted to a string and used as an index in the underlying hash table. The corresponding value is then stored at that index in memory. 
+
+    -> Objects and Prototypes : 
+          1.In JavaScript, objects can inherit properties and methods from other objects through a mechanism called prototypes. Every object in JavaScript has a prototype, which is another object that it inherits properties and methods from. This forms a prototype chain, where objects inherit from their prototype, which in turn may have its own prototype, and so on, until the chain reaches the object.prototype at the top. 
+
+    -> Accessing Objects : 
+           const person = { 
+              name: 'John Doe', 
+              age: 30, 
+              } 
+           console.log(person.age); 
+
+        -> Objects are a fundamental aspect of JavaScript, providing a powerful way to represent and manipulate data and functionality. 
